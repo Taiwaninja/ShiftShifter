@@ -54,9 +54,10 @@ def print_work_day(day):
     print "Schedule for workday %(day_identifier)s" % {"day_identifier": day.identifier}
     for shift_type, shift in day.shift_type_to_shift_mapping.iteritems():
         workers_in_shift = [worker.full_name for worker in shift.workers_in_shift]
-        workers_in_shift_stringified = ",".join(workers_in_shift)
+        workers_in_shift_stringified = ", ".join(workers_in_shift)
         print "%(shiftType)s: %(workers)s" % {"shiftType": shift_type, "workers": workers_in_shift_stringified}
 
 
 if __name__ == "__main__":
     main()
+    raw_input("Press any key to exit")
